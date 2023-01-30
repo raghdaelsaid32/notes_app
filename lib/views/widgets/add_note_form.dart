@@ -49,24 +49,33 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxLines: 5,
           ),
           const SizedBox(
-            height: 150,
+            height: 100,
           ),
-          CustomButtton(
-            onTap: () {
-              if (formKey.currentState!.validate()) {
-                formKey.currentState!.save();
-                var noteModel = NoteModel(
-                    title: title!,
-                    subTitle: subTitle!,
-                    color: Colors
-                        .blue.value, // l value de btrg3ly integer bta3 l color
-                    date: DateTime.now().toString());
-                BlocProvider.of<AddNoteCubitCubit>(context).addNote(noteModel);
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
-            },
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: BlocBuilder<AddNoteCubitCubit, AddNoteCubitState>(
+              builder: (context, state) {
+                return CustomButtton(
+                  isLoading: state is AddNoteCubitLoading ? true : false,
+                  onTap: () {
+                    if (formKey.currentState!.validate()) {
+                      formKey.currentState!.save();
+                      var noteModel = NoteModel(
+                          title: title!,
+                          subTitle: subTitle!,
+                          color: Colors.blue
+                              .value, // l value de btrg3ly integer bta3 l color
+                          date: DateTime.now().toString());
+                      BlocProvider.of<AddNoteCubitCubit>(context)
+                          .addNote(noteModel);
+                    } else {
+                      autovalidateMode = AutovalidateMode.always;
+                      setState(() {});
+                    }
+                  },
+                );
+              },
+            ),
           )
         ],
       ),
