@@ -6,6 +6,7 @@ import 'package:notes_app/models/note_model.dart';
 
 import 'package:intl/intl.dart';
 
+import 'colors_list_view.dart';
 import 'custom_button.dart';
 import 'custom_textField.dart';
 
@@ -50,6 +51,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hint: 'Content',
             maxLines: 5,
           ),
+         ColorsListView(),
           const SizedBox(
             height: 100,
           ),
@@ -88,3 +90,4 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
+
