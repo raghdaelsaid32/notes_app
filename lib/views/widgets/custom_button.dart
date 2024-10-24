@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../../core/constants.dart';
 
 class CustomButtton extends StatelessWidget {
   const CustomButtton({super.key, this.onTap, this.isLoading = false});

@@ -3,7 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:meta/meta.dart';
 import 'package:notes_app/models/note_model.dart';
 
-import '../../constants.dart';
+import '../../core/constants.dart';
 import '../add_cubit/add_note_cubitt.dart';
 
 part 'notes_state.dart';
