@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/core/constants.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
@@ -29,7 +28,7 @@ class _EditViewBodyState extends State<EditViewBody> {
         children: [
           const SizedBox(height: 55),
           CustomAppBar(
-            title: 'Edit Note',
+            title: 'Edit',
             icon: Icons.check,
             onPressed: () {
               widget.note.title = title ?? widget.note.title;
